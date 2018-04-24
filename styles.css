@@ -1,38 +1,63 @@
 body {
-  background-color: #F9A03F;
+  background-color: #2274A5;
 }
 
-#navbarHeader {
-  background-color: #2B2D42;
+.card-img-top {
+  height: 200px;
 }
 
-#projects {
-  background-color: #2B2D42;
-  padding-top: 20px;
+.card-img-top:hover {
+  filter: grayscale();
 }
 
-.jumbotron {
-  background-color: white;
-}
-
-span {
-  color: #F9A03F;
-}
-
-#profPic {
-  height: 180px;
-  width: 150px;
-  border-radius: 50%;
-  border: 4px solid #F9A03F;
-}
-
-img.card-img-top {
-  width: 100%;
-  height: 225px;
+.btn {
+  border: none;
+  outline: none;
   display: inline-block;
+  position: relative;
+  background-color:  #2274A5;
+  font-size: 16px;
+  font-weight: 300px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1px 20px;
+  margin: 10 0;
+  border-radius: 20px;
+  box-shadow: 0 6px #214965;
 }
 
-img.card-img-top:hover {
-  -webkit-filter: grayscale(100%) blur(3px);
-  filter: grayscale(100%) blur(3px);
+.btn:hover {
+  background-color: #343a40;
+  transform-origin: top left;
+  transform: scale(1) translateY(-10px);
+  opacity: 0.5;
+}
+
+.btn:active {
+box-shadow: none;
+top: 6px;
+}
+
+.animated {
+  transition-property: opacity, background-color, transform;
+  transition-duration: 0.7s, 0.3s, 0.3s;
+  transition-delay: 0.1s, 0.1s, 0s;
+  transition-timing-function: ease-out;
+}
+
+div.item:hover img {
+  filter: grayscale(100%);
+}
+
+div.item * {
+  transition: transform 0.5s ease-in-out;
+}
+
+div.item:hover i {
+  transform: translate(-50%, -50) scale(1);
+}
+
+div.item i {
+  transform: translate(-50%, -50) scale(0);
 }
