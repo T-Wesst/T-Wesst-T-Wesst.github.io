@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 class Project extends Component {
   render() {
-    const { imgSrc, desc, title, alt } = this.props.project;
+    const { imgSrc, desc, url, srcCode, title, alt } = this.props.project;
     return (
       <div className="card box-shadow">
         <div className="item">
@@ -11,12 +11,22 @@ class Project extends Component {
             <p className="card-body">{desc}</p>
             <small>
               <i className="fas fa-external-link-alt" />
-              <a href="/" target="_blank" className="card-link">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-link"
+              >
                 Preview
               </a>
               <br />
               <i className="fas fa-code" />
-              <a href="/" target="_blank" className="card-link">
+              <a
+                href={srcCode}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-link"
+              >
                 Source
               </a>
             </small>
