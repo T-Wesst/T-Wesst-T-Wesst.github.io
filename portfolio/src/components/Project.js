@@ -1,20 +1,14 @@
 import React, { Component } from "react";
 class Project extends Component {
   render() {
+    const { imgSrc, desc, title, alt } = this.props.project;
     return (
       <div className="card box-shadow">
         <div className="item">
-          <img
-            src="https://t-wesst.github.io/images/la.jpg"
-            alt="temp img"
-            className="card-img-top"
-          />
+          <img src={imgSrc} alt={alt} className="card-img-top" />
           <div className="card-body">
-            <h4 className="text-center">Veg-LA</h4>
-            <p className="card-body">
-              A web application that publishes crowd-sourced reviews about local
-              vegan business in the Los Angeles area.
-            </p>
+            <h4 className="text-center">{title}</h4>
+            <p className="card-body">{desc}</p>
             <small>
               <i className="fas fa-external-link-alt" />
               <a href="/" target="_blank" className="card-link">
