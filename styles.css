@@ -1,5 +1,5 @@
 body {
-  background-color: #2274A5;
+  background-color: #2274a5;
 }
 
 .card-img-top {
@@ -15,7 +15,7 @@ body {
   outline: none;
   display: inline-block;
   position: relative;
-  background-color:  #2274A5;
+  background-color: #2274a5;
   font-size: 16px;
   font-weight: 300px;
   color: white;
@@ -35,8 +35,8 @@ body {
 }
 
 .btn:active {
-box-shadow: none;
-top: 6px;
+  box-shadow: none;
+  top: 6px;
 }
 
 .animated {
@@ -60,4 +60,27 @@ div.item:hover i {
 
 div.item i {
   transform: translate(-50%, -50) scale(0);
+}
+
+.fa-html5 {
+  color: #f15931;
+}
+
+.fa-css3-alt {
+  color: #007dc6;
+}
+.fa-js {
+  color: #f58233;
+}
+.fa-react {
+  color: #60dbfb;
+}
+.fa-node {
+  color: #8fc53f;
+}
+.fa-npm {
+  color: #cb3837;
+}
+.fa-git {
+  color: #f05033;
 }
