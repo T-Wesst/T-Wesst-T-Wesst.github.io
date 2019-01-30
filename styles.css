@@ -30,7 +30,7 @@ body {
 .btn:hover {
   background-color: #343a40;
   transform-origin: top left;
-  transform: scale(1) translateY(-10px);
+  transform: scale(1) translateY(-2px);
   opacity: 0.5;
 }
 
