@@ -47,11 +47,6 @@ export default function ButtonAppBar() {
               Projects
             </Link>
           </Button>
-          <Button color="inherit">
-            <Link className={classes.link} to="/articles">
-              Articles
-            </Link>
-          </Button>
         </Toolbar>
       </AppBar>
       <CssBaseline />

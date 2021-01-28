@@ -1,89 +1,98 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import Card from '@material-ui/core/Card';
 import { red } from '@material-ui/core/colors';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ProfilePic from '../images/profile_pic.jpg';
+import ProjectList from '../components/ProjectList';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
-    margin: '20px auto 0',
+    margin: '100px auto',
+    display: 'flex',
+    justifyContent: 'center',
   },
   media: {
-    height: 280,
-    paddingTop: '56.25%', // 16:9
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
+    height: 180,
+    maxWidth: 180,
+    border: 'solid 5px #e0e0e0',
+    borderRadius: '100%',
   },
   avatar: {
     backgroundColor: red[500],
+  },
+  content: {
+    maxWidth: 400,
   },
 }));
 
 export default function RecipeReviewCard() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const [about, setAbout] = useState(false);
+  const [projects, setProjects] = useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const loadAbout = () => {
+    setAbout((current) => !current);
+    console.log(`about: ${about} || projects: ${projects}`);
+  };
+
+  const loadProjects = () => {
+    setProjects((current) => !current);
+    console.log(`about: ${about} || projects: ${projects}`);
   };
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        title="Tyroo West"
-        subheader="Building beautiful solutions for the web."
-      />
-      <CardMedia
-        className={classes.media}
-        image={ProfilePic}
-        title="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          Front End Web Developer focused on reshaping the future.
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
+    <div className={classes.root}>
+      <div>
+        <CardMedia
+          className={classes.media}
+          image={ProfilePic}
+          title="Paella dish"
+        />
+        <CardHeader
+          title="Tyroo West"
+          subheader="Building beautiful solutions for the web."
+        />
+        <ButtonGroup
+          orientation="vertical"
+          color="primary"
+          aria-label="vertical contained primary button group"
+          variant="contained"
         >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>About:</Typography>
-          <Typography paragraph>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            neque atque aliquam dignissimos officia minima animi earum totam
-            laudantium? Numquam non magni aliquid, labore excepturi sit
-            voluptatem! At, inventore enim!
-          </Typography>
-        </CardContent>
-      </Collapse>
-    </Card>
+          <Button color="primary" variant="contained" onClick={loadAbout}>
+            About
+          </Button>
+          <Button color="primary" variant="contained" onClick={loadProjects}>
+            Projects
+          </Button>
+        </ButtonGroup>
+      </div>
+      <div className={classes.content}>
+        {about ? (
+          <Card>
+            <CardContent>
+              <Typography variant="body2" color="textSecondary" component="p">
+                Hi I'm Tyroo West Front End Web Developer based in Los Angeles,
+                California. I am passionate about building web applications and
+                communicating technical concepts to non-technical folks. I bring
+                a passion for clean and easy to use user interfaces to every
+                project I work on. My mission is to reshape the future by
+                transforming simple websites into robust technical solutions
+                that will put them ahead of their competitors. I am currently
+                available for new opportunities whether you're a person with an
+                idea, a company with a mission, or a fellow developer looking to
+                network, connect with me and lets continue the conversation.
+              </Typography>
+            </CardContent>
+          </Card>
+        ) : null}
+        {projects ? <ProjectList /> : null}
+      </div>
+    </div>
   );
 }
