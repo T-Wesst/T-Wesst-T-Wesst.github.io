@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
+    height: 16,
   },
 }));
 
@@ -37,34 +38,16 @@ const tileData = [
   {
     img: PawfectPet,
     title: 'Pawfect-Pet',
-    tech: 'Node',
+    tech: 'MERN',
     cols: 1,
-    url: 'https://github.com/T-Wesst/pokedex-project',
+    url: 'https://github.com/T-Wesst/pawfect-pet',
   },
   {
     img: cliTool,
     title: 'Amazon-CLI',
-    tech: 'SQL',
+    tech: 'Node-MySQL',
     cols: 2,
-    url: 'https://github.com/T-Wesst/pokedex-project',
-  },
-  {
-    img: Pokedex,
-    title: 'Image',
-    tech: 'tech',
-    cols: 1,
-  },
-  {
-    img: PawfectPet,
-    title: 'Image',
-    tech: 'tech',
-    cols: 1,
-  },
-  {
-    img: cliTool,
-    title: 'Image',
-    tech: 'tech',
-    cols: 1,
+    url: 'https://github.com/T-Wesst/Amazon-Zip',
   },
 ];
 export default function TitlebarGridList() {
