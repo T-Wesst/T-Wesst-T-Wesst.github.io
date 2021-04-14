@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3, 2),
     position: 'fixed',
     left: 0,
+    textAlign: 'center',
     right: 0,
     top: '87%',
     marginTop: 'auto',

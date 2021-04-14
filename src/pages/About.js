@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: '100px auto',
     display: 'flex',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+    },
     justifyContent: 'center',
   },
   media: {
@@ -22,6 +25,14 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 180,
     border: 'solid 5px #e0e0e0',
     borderRadius: '100%',
+    [theme.breakpoints.up('xs')]: {
+      width: '100%',
+    },
+  },
+  mobile: {
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'row',
+    },
   },
   avatar: {
     backgroundColor: red[500],
@@ -48,17 +59,20 @@ export default function RecipeReviewCard() {
 
   return (
     <div className={classes.root}>
-      <div>
-        <CardMedia
-          className={classes.media}
-          image={ProfilePic}
-          title="Paella dish"
-        />
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <CardMedia
+            className={classes.media}
+            image={ProfilePic}
+            title="Paella dish"
+          />
+        </div>
         <CardHeader
           title="Tyroo West"
           subheader="Building beautiful solutions for the web."
         />
         <ButtonGroup
+          className={classes.mobile}
           orientation="vertical"
           color="primary"
           aria-label="vertical contained primary button group"
